@@ -21,7 +21,7 @@ function SacarResto()
 	divisor= parseInt(document.getElementById("txtIdNumeroDivisor").value);
     //aplico la operacion
 
-	solucion= dividendo % divisor;  
+	solucion= dividendo / divisor;  
     //establezco el mensaje
 	
 	mensajeMostrado= "El resto es " + solucion; 

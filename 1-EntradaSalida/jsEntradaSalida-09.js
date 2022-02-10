@@ -10,9 +10,9 @@ function mostrarAumento()
     //declaro variables
 
     let sueldo;
-    let sueldoAumentado;
     let aumento;
-
+    let sueldoAumentado;
+    
     //agrego valor
     sueldo= parseInt(document.getElementById("txtIdIngreseSueldo").value);
 

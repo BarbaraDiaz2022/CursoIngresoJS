@@ -1,6 +1,15 @@
+//Diaz Barbara 
+//Ejercicio if 9 
+
 function mostrar()
 {
-	//Genero el número RANDOM entre 1 y 10 
-	alert("ok");	
+	let numero;
+	let maximo= 10;
+	let minimo=1;
+	
+	//un numero random se genera siempre de la siguiente forma 
+	numero= Math.round(Math.random() * (maximo - minimo) + minimo);
 
-}//FIN DE LA FUNCIÓN
+	alert(numero);
+
+}
