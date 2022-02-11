@@ -20,6 +20,8 @@ function mostrar()
 
 	}
 
+
+	
 }
 
 /*if ( edad >= 13 && edad <=17){

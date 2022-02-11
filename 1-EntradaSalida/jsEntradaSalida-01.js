@@ -1,25 +1,23 @@
 /*Comentarios
 Barbara Diaz
 Ejercicio 1*/
-/*
-Al presionar el  botón, se debe mostrar un mensaje como el siguiente "Esto funciona de maravilla"
+
+//Al presionar el  botón, se debe mostrar un mensaje como el siguiente "Esto funciona de maravilla"
 function mostrar()
 {
-	alert("Esto funciona de maravilla");
+/*	alert("Esto funciona de maravilla");
 
-}
+
 
 
 //Diaz Barbara
 
 
-/*Se piden tres nombre de producto, y los precios de cada  producto ingresado, sacar el precio bruto 
+Se piden tres nombre de producto, y los precios de cada  producto ingresado, sacar el precio bruto 
 (la suma de los tres sin impuestos), el promedio de los precios y el precio final total más iva (21%), 
 pedir un porcentaje de descuento y aplicarlo al precio final, mostrar todos los datos calculados e ingresados por alert.
- (solo un alert en el código) */
-
- function mostrar ()
-{	
+ (solo un alert en el código) 
+	
 	//declarar variables 
 
 	//sacar precio bruto 
@@ -28,7 +26,7 @@ pedir un porcentaje de descuento y aplicarlo al precio final, mostrar todos los 
 	//pedir un porcentaje del descuento y aplicarlo al precio final 
 	//mostrar los datos calculados e ingresados por alerta, solo una alerta
 	//pedir datos por prompt 
-
+*/
 
 	let ingresoNombre1; 
 	let ingresoNombre2;

@@ -1,10 +1,17 @@
+//Diaz Barbara
+//Ejercicio switch 3 
+
 function mostrar()
 {
-	//tomo el mes
-	var mesDelAño =txtIdMes.value;
-	alert(mesDelAño);
-	
-	
+	let tomoElMes; 
+	tomoElMes= document.getElementById("txtIdMes").value;
 
+	switch(tomoElMes) {
+		case "Febrero":
+			alert("Este mes no tiene más de 29 días");
+			break;
 
-}//FIN DE LA FUNCIÓN
+		default:
+			alert("Este mes tiene 30 o más días");
+	}	
+}

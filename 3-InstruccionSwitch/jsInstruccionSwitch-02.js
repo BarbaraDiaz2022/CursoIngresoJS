@@ -1,10 +1,25 @@
+//Diaz Barbara
+//Switch 2 
+
 function mostrar()
 {
-	//tomo el mes
-	var mesDelAño =txtIdMes.value;
-	alert(mesDelAño);
+	let tomoElMes; 
+	tomoElMes= document.getElementById("txtIdMes").value;
 
+	switch(tomoElMes){
+		case "Julio":	
+		case "Agosto":
+			alert("Abrigate que hace frío");
+			break; 
 
+		case "Septiembre":	 
+		case "Octubre": 
+		case "Noviembre":
+		case "Diciembre":
+			alert("Ya pasamos el frío, ahora calor!"); 
+			break;
 
-
-}//FIN DE LA FUNCIÓN
+		default:
+			alert("Falta para el invierno"); 
+	}
+}

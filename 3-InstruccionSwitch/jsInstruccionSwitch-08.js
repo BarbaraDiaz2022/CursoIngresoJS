@@ -1,6 +1,17 @@
+//Diaz Barbara
+//Ejercicio 8 switch
+
 function mostrar()
 {
-	var destinoIngresado =txtIdDestino.value;
-	alert(destinoIngresado);
+	let ingresoDestino;
+	ingresoDestino= document.getElementById("txtIdDestino").value;
 
-}//FIN DE LA FUNCIÓN
+	switch (ingresoDestino){
+		case "Bariloche":
+		case "Ushuaia":
+			alert ("Acá hace frío");
+			break;
+		default:
+			alert("Acá hace calor");
+	}
+}

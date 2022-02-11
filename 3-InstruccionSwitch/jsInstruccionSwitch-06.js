@@ -1,7 +1,19 @@
+//Diaz Barbara 
+//Ejercicio 6 switch
+
 function mostrar()
 {
-	//tomo la hora
-	var horaDelDia =txtIdHora.value;
-	alert(horaDelDia);
+	let ingresoHora;
+	ingresoHora=parseInt(document.getElementById("txtIdHora").value);
 
-}//FIN DE LA FUNCIÓN
+	switch(ingresoHora){
+		case 7:
+		case 8:
+		case 9:
+		case 10:
+		case 11: 
+			alert("Es de mañana");
+			break; 
+		
+	}
+}
