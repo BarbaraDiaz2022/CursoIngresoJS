@@ -4,16 +4,19 @@
 function mostrar()
 {
 	let ingresoDestino;
+	let mensaje; 
 	ingresoDestino= document.getElementById("txtIdDestino").value;
 
 	switch (ingresoDestino){
 		case "Bariloche":
-			alert("Se encuentra en el oeste de nuestro país");
+			mensaje = "Se encuentra en el oeste de nuestro país";
 			break;
 		case "Ushuaia":
-			alert("Se encuentra en el sur de nuestro país");
+			mensaje = "Se encuentra en el sur de nuestro país";
 			break; 
 		default:
-			alert ("Se encuentra en el este de nuestro país");
-	}
+			mensaje = "Se encuentra en el este de nuestro país";
+			break; 
+		}
+		alert (mensaje);
 }
