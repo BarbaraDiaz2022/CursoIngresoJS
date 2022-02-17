@@ -1,3 +1,6 @@
+//Diaz Barbara
+//Ejercicio 9 switch 
+
 function mostrar()
 {
 	let ingresoEstacion;

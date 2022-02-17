@@ -8,6 +8,7 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
+//Diaz Barbara- TP4 if (cantidad) y  switch (marca)
 function CalcularPrecio () 
 {
     let cantidadDeLamparas; 
@@ -22,43 +23,51 @@ function CalcularPrecio ()
     cantidadDeLamparas = parseInt(document.getElementById("txtIdCantidad").value); 
     marca = document.getElementById("Marca").value; 
 
-    switch (cantidadDeLamparas){
-        case 3: 
-            if ( marca == "ArgentinaLuz"){
+    if (cantidadDeLamparas = 3){
+        switch (marca){
+            case "FelipeLamparas": 
+                descuento = 10; 
+            break; 
+            case "ArgentinaLuz": 
                 descuento = 15;
-            }
-            else if ( marca == "FelipeLamparas"){
-                descuento = 10;
-            }
-            else {
-                descuento = 5; 
-            }
-        break;
-        case 4: 
-            if ( marca == "ArgentinaLuz" || marca == "FelipeLamparas"){
-                descuento = 25; 
-            }
-            else {
-                descuento = 20;
-            }
-        case 5: 
-            if ( marca == "ArgentinaLuz"){
-                descuento = 40;
-            }
-            else {
+            break;
+            default:
+                descuento = 5;
+            break;
+        }
+    } 
+    if (cantidadDeLamparas = 4){
+        switch (marca){
+            case "FelipeLamparas": 
+            case "ArgentinaLuz":
+                descuento = 25;
+            break; 
+            default: 
+                descuento = 20; 
+            break; 
+        }
+    }
+    if (cantidadDeLamparas = 5){
+        switch (marca){
+            case "ArgentinaLuz": 
+                descuento = 40; 
+            break;
+            default:
                 descuento = 30;
-            }
-        default: 
-            descuento = 50; 
+            break; 
+        }
+    }
+    else {
+        descuento = 50; 
     }
     if (descuento != 0){
         precioConDescuento = PRECIOLAMPARA - (PRECIOLAMPARA * descuento / 100)
         precioFinal = precioConDescuento * cantidadDeLamparas; 
     }
-    if (precioFinal > 120){
+    else if (precioFinal > 120){
         precioIIBB = precioFinal * 10 / 100; 
         precioIIBBFinal = precioFinal + precioIIBB;
-        alert ("IIBB usted pago " + precioIIBBFinal); 
+        alert ("IIBB usted pago " + precioIIBB); 
     }
-    document.getElementById("txtIdprecioDescuento").value = precioFinal + precioIIBBFinal;  
+    document.getElementById("txtIdprecioDescuento").value = precioIIBBFinal;  
 }
