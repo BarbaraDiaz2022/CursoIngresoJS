@@ -1,13 +1,21 @@
+//diaz barbara 
+//ejercicio 6 while 
+
 function mostrar()
 {
-	var contador;
-	var acumulador;
-	var numeroIngresado;
+	let numero;
+	let acumulador = 0;
+	let promedio;
+	let i = 0;
 
-	contador=0;
-	acumulador=0;
+	while (i < 5){
+		numero = parseInt(prompt("ingrese numero")); 
+		acumulador = acum + numero; 
+		i++ // es otra forma de escribir el i= i + 1
+	}
 	
-	
-	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/5;
-}//FIN DE LA FUNCIÓN
+	promedio = acum / 5; 
+
+	document.getElementById("txtIdSuma").value = acum;
+	document.getElementById("txtIdPromedio").value = promedio; 
+}

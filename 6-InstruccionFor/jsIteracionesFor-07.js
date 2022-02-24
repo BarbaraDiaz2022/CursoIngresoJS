@@ -1,7 +1,18 @@
+//diaz barbara
+//ejercicio for 7
 function mostrar()
 {
+	let numero; 
+	let contadorDeDivisores = 0;
+	let i; 
 
-	alert("ok");
+	numero = parseInt(prompt("Ingrese un numero")); 
 
-
-}//FIN DE LA FUNCIÓN
+	for (i = 1; i <= numero; i++){
+		if (numero % i == 0){
+			console.log(i)
+			contadorDeDivisores++;
+		}
+	}
+	console.log("usted ingreso " + contadorDeDivisores + " divisores"); 
+}

@@ -17,11 +17,12 @@ function mostrar()
 	}
 	alert (mensaje); */
 
-	if (ingresoDestino == "Bariloche" || "Ushuaia"){
+	if (ingresoDestino == "Bariloche" || ingresoDestino == "Ushuaia"){
 		mensaje = "Aca hace frio"; 
 	}
-		else {
+	else {
 		mensaje = "Aca hace calor"; 
 		}
+
 	alert(mensaje); 
 }

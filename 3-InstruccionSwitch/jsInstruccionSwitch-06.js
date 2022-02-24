@@ -1,51 +1,26 @@
 //Diaz Barbara 
-//Ejercicio 6 switch
+//Ejercicio 6 de switch con if 
 
 function mostrar()
 {
 	let ingresoHora;
+	let mensaje;
 	ingresoHora=parseInt(document.getElementById("txtIdHora").value);
 
-	switch(ingresoHora){
-		case 7:
-		case 8:
-		case 9:
-		case 10:
-		case 11: 
-			alert("Es de mañana");
-			break; 
-	
+	if (ingresoHora >= 7 && ingresoHora <= 11){
+		mensaje = "Es de mañana"; 
 	}
-
-	switch(ingresoHora){
-		case 12:
-		case 13: 
-		case 14: 
-		case 15:
-		case 16:
-		case 17:
-		case 18:
-		case 19:
-			alert ("Es de tarde");
-			break;
+	else if (ingresoHora >= 12 && ingresoHora <= 19){
+		mensaje = "Es de tarde";
 	}
-
-	switch (ingresoHora){
-		case 20:
-		case 21:
-		case 22:
-		case 23:
-		case 24: 
-		case 0:
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-		case 5:
-		case 6:
-			alert ("Es de noche");
-			break;
-		default: 
-			alert("la hora no existe"); 
+	else if (ingresoHora >= 20 && ingresoHora <= 24){
+		mensaje = "Es de noche";
 	}
+	else if (ingresoHora >= 0 && ingresoHora <= 6){
+		mensaje = "Es de noche"; 
+	}
+	else {
+		mensaje = "La hora no existe"; 
+	}
+	alert (mensaje); 
 }

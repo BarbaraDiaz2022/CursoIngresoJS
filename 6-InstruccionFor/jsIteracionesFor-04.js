@@ -1,7 +1,14 @@
 function mostrar()
 {
-	alert("ok");
+	let i; 
+	let repeticiones;
 
+	repeticiones = parseInt(prompt("Ingrese cantidad de repeticiones"));
 
-
-}//FIN DE LA FUNCIÓN
+	for (i=0; i<=repeticiones; i++){
+		if (i == 4){
+			break; 
+		}
+		alert(i); 
+	}
+}

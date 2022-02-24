@@ -1,7 +1,19 @@
+//diaz barbara
+//ejercicio for 5
 function mostrar()
 {
-	alert("ok");
+	let numero; 
+	let contadorDeNumerosPares = 0;
+	let i; 
 
+	numero = parseInt(prompt("Ingrese un numero")); 
 
+	for (i = 1; i < numero; i++){
 
-}//FIN DE LA FUNCIÓN
+		if (i % 2 == 0){
+			console.log(i); 
+			contadorDeNumerosPares++; 
+		}
+	}
+	console.log("usted ingreso " + contadorDeNumerosPares + " numeros pares"); 
+}
