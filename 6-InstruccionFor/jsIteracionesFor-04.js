@@ -1,3 +1,5 @@
+//diaz barbara
+//ejercicio for 4
 function mostrar()
 {
 	let i; 

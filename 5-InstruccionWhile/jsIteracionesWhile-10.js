@@ -68,18 +68,18 @@ function mostrar()
 	document.write("La diferencia entre numeros positivos y negativos ingresados es " + diferencia);
 	*/
 	
+	//diaz barbara
+
 	/*En WHILE 10. La universidad le pide ingresar: edad y nombre de los alumnos, informar el 
 	nombre de la persona más vieja y la más joven por document.write(Validar que sean números y
-	rango de edad).*/
+	rango de edad).*/ /*
 	let edad;
 	let nombre; 
-	let edadMasVieja;
-	let edadMasJoven;
-	let acumuladorEdadMasVieja = 0;
-	let acumuladorEdadMasJoven = 0; 
+	let edadMasVieja = 0;
+	let edadMasJoven = 86;
+	let nombreEdadMasVieja;
+	let nombreEdadMasJoven; 
 	let respuesta; 
-	let bandera = 0; 
-	let mensaje; 
 
 	do {
 		nombre = prompt("Ingrese su nombre"); 
@@ -89,18 +89,66 @@ function mostrar()
 			edad = parseInt(prompt("Error. Ingrese una edad valida"));
 		}
 
-		if (edad > edadMasVieja || bandera == 0){
-			acumuladorEdadMasVieja = edad; 
+		if (edad > edadMasVieja){
+			edadMasVieja = edad; 
+			nombreEdadMasVieja = nombre; 
 		}
-		if (edad <edadMasJoven || bandera == 0){
-			acumuladorEdadMasJoven = edad; 
-			bandera == 1; 
+		if (edad < edadMasJoven){
+			edadMasJoven = edad; 
+			nombreEdadMasJoven = nombre; 
 		}
 
-		respuesta = prompt("Desea seguir ingresando? Indique 'si'/'no'"); 
-	}while (respuesta == "si"); 
+		respuesta = prompt("Desea seguir ingresando? Indique s/n"); 
+	}while (respuesta == "s"); 
 
-	//mensaje = nombre + " de "+ acumuladorEdadMasJoven + " años es la persona mas joven"; 
-	//mensaje = nombre + " de " + acumuladorEdadMasVieja + " años es la persona mas vieja"; 
-	alert(mensaje);
+	document.write("La persona mas joven de la facultad es "+nombreEdadMasJoven+"<br>"); 
+	document.write("La persona mas vieja de la facultad es "+nombreEdadMasVieja); */
+
+	//diaz barbara
+
+	/*En WHILE 10. Al presionar el botón pedir números hasta que el usuario quiera, mostrar por document.write:
+	 el número máximo y el número mínimo ingresado, el menor de los pares y el mayor de los negativos ...solo si hay)*/ 
+	
+	let numero; 
+	let numeroMin=0;
+	let numeroMax=0; 
+	let respuesta; 
+	let bandera = 0;
+	let menorDeLosPares = 0; 
+	let mayorDeLosNegativos = 0; 
+
+		do{
+			do{
+				numero  = parseFloat(prompt("Ingrese solo numeros"));
+			}while(isNaN(numero)==true);
+
+			if (bandera=0){
+				numeroMax = numero;
+				numeroMin = numero; 
+				bandera = 1; //reseteo la bandera para que en la prox vuelta no entre de nuevo
+			}
+			//guardo el max
+			if (numero > numeroMax){
+				numeroMax = numero; 
+			}
+			//busco el mayor de los negativos
+			if (numeroMax < 0){
+				mayorDeLosNegativos = numeroMax; 
+			}
+			//guardo el min
+			if (numero < numeroMin){
+				numeroMin = numero; 
+			}
+			//el menor de los pares
+			if (numeroMin%2==0){ 
+				menorDeLosPares = numeroMin; 
+			}
+
+			respuesta = prompt("Desea seguir ingresando numeros?Indique s/n"); 
+		}while(respuesta=="s");
+
+		document.write("El numero maximo es "+numeroMax+"<br>");
+		document.write("El numero minimo es "+numeroMin+"<br>");
+		document.write("El menor numero de los pares es "+menorDeLosPares+"<br>");
+		document.write("El mayor numero de los negativos es "+mayorDeLosNegativos+"<br>");
 }

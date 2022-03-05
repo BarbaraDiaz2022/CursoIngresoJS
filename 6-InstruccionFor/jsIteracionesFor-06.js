@@ -1,5 +1,5 @@
 //diaz barbara
-//ejercicio for 5
+//ejercicio for 6
 function mostrar()
 {
 	let numero; 

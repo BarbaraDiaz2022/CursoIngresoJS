@@ -83,32 +83,46 @@ function mostrar()
 	 " Usted se llama XXX y tiene la temperatura (NORMAL, BAJA, ALTA DEBE AISLARSE)"
 	 (VALIDAR que sean numeros y los rangos de las temperaturas).*/
 	 let nombre;
-	 let acumuladorNombre;
 	 let temperatura;
+	 let acumuladorNombre;
+	 let acumuladorTemperaturaBaja = 0; 
+	 let acumuladorTemperaturaNormal = 0;
+	 let acumuladorTemperaturaAlta = 0; 
+	 let nombreTemperaturaBaja;  
+	 let nombreTemperaturaNormal; 
+	 let nombreTemperaturaAlta; 
 	 let respuesta; 
+	 let mensaje1;
+	 let mensaje2;
+	 let mensaje3;  
 
-	 do {
+	do {
 		nombre = prompt("Ingrese su nombre");
-		acumuladorNombre = nombre; 
-		temperatura = parseFloat(prompt("Ingrese su temperatura")); 
+		do {
+			temperatura = parseFloat(prompt("Ingrese una temperatura valida"));
+		}while (isNaN(temperatura)==true|| temperatura <33 || temperatura >44);
+		
+		if (temperatura>=35 && temperatura<=36.8){
+			acumuladorTemperaturaNormal = acumuladorTemperaturaNormal + temperatura;
+			nombreTemperaturaNormal = nombre;  
+		}
+		else if (temperatura<35){
+			acumuladorTemperaturaBaja = temperatura; 
+			nombreTemperaturaBaja = nombre; 
+		}
+		else {
+			acumuladorTemperaturaAlta = temperatura;
+			nombreTemperaturaAlta = nombre; 
+		}
 
-		while (isNaN(temperatura == true) || temperatura < 33 || temperatura > 44){
-			temperatura = parseFloat(prompt("Error.Ingrese una temperatura válida"));
-		}//validacion funciona 
-
-		if (temperatura >= 36.1 && temperatura <= 37.2) {
-			mensaje = acumuladorNombre + " Temperatura normal"; 
-			//console.log(mensaje); 
-		} 	
-		else if (temperatura > 37.2){
-			mensaje = acumuladorNombre +" Temperatura alta. Debe aislarse."
-			//console.log(mensaje); 
-		} 
-			else {
-				mensaje = acumuladorNombre + " Temperatura baja"; 
-				//console.log(mensaje); 
-			}
-		respuesta = prompt ("Desea seguir ingresando? Indique 'si' o 'no'");
-	 }while (respuesta == "si");
+		respuesta = prompt("Desea seguir ingresando datos?Indique s/n"); 
+	}while(respuesta == "s");
+	
+	mensaje1 = "Usted se llama "+nombreTemperaturaNormal+" y tiene temperatura normal";
+	mensaje2 = "Usted se llama "+nombreTemperaturaBaja+" y tiene temperatura baja";
+	mensaje3 = "Usted se llama "+nombreTemperaturaAlta+" y tiene temperatura alta.Debe aislarse"; 
+	alert(mensaje1);
+	alert(mensaje2);
+	alert(mensaje3);
 
 }
