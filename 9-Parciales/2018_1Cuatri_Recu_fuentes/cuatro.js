@@ -121,7 +121,7 @@ cantidad de pasajeros que viajan. informar:
 a)el lugar destino elegido.
 b)el nombre del pasajero titular que lleva menos pasajeros.
 c)el promedio de personas, que viajan en temporada alta. */
-
+    
     let nombre;
     let destino;
     let temporada; 
