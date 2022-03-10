@@ -37,7 +37,7 @@ function mostrar()
 		}while(isNaN(precio)==true || precio <100 || precio >300); 
 		do {
 			cantidad = parseInt(prompt("Ingrese la cantidad de productos. Solo hasta 1000"));
-		}while(isNaN(cantidad)==true || cantidad <0 || cantidad >1000); 
+		}while(isNaN(cantidad)==true || cantidad <1 || cantidad >1000); 
 		marca = prompt("Ingrese marca");
 		fabricante = prompt("Ingrese fabricante"); 
 
@@ -57,4 +57,22 @@ function mostrar()
 	document.write("El tipo con mas unidades fue "+tipoMaxCant+" y el precio fue "+precioMaxCant +"<br>");
 	document.write("La cantidad de jabones ingresadas es "+contadorJabon +"<br>");
 
+	/*
+	Algunas validaciones que no cambian mucho (se pueden reutilizar) 
+	do {
+		numero = parseInt(prompt("Ingrese un numero"));
+	}while(isNaN(numero)==true || numero < 0 || numero >50);
+
+	do{
+		nombre = prompt("Ingrese el nombre");
+	}while(isNaN(nombre)==false);
+
+	do {
+		sexo = prompt("Indique el sexo: f/m");
+	}while(sexo != "f" && sexo != "m");
+
+	do {
+		palabra = prompt("Indique una palabra: esto/algo/aquello");
+	}while(isNaN(palabra)==false || palabra != "esto" || palabra !="algo" || palabra != "aquello");
+	*/
 }

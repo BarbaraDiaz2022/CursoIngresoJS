@@ -735,7 +735,7 @@ d) La edad y nombre del que cursa menos cantidad de materias y que esté buscand
 		document.write(mensajeC+"<br>");
 		document.write(mensajeC+"<br>");
 		document.write(mensajeC+"<br>");
-		document.write(mensajeD+"<br>");*/
+		document.write(mensajeD+"<br>"); */
 
 //diaz barbara
 /* Simil Parcial 7:
@@ -870,7 +870,7 @@ f)Sumando gatos y perros que porcentaje del total de mascotas son?
 g)Qué estado clínico tiene la menor cantidad de mascotas   
 H)Cuál es el promedio de kilos de peso, tomando todas las mascotas
 i)El nombre y raza del gato sin pelos más liviano*/
-
+		
 		let tipo;
 		let pelaje; 
 		let edad; 
@@ -880,59 +880,158 @@ i)El nombre y raza del gato sin pelos más liviano*/
 		let estadoClinico;
 		let temperatura; 
 		let seguir; 
+		let pesoPerroMax = 0; 
+		let nombrePerroMax; 
+		let contTotalMascotas = 0;
+		let contEnfermos = 0; 
+		let porcentaje;
+		let nombreOtro; 
+		let temperaturaMiN = 0;
+		let nombreTempMin;
+		let acumTemPerro = 0;
+		let contPerro = 0;
+		let acumTemGato = 0;
+		let contGato = 0;
+		let acumTemOtro = 0;
+		let contOtro = 0; 
+		let promedioPerro;
+		let promedioGato;
+		let promedioOtro; 
+		let mensaje;   
+		let porcentajePyG;
+		let sumaPyG; 
+		let contInternados = 0;
+		let contAdopcion = 0; 
+		let mensaje2; 
+		let acumPesoPerro = 0;
+		let acumPesoGato = 0;
+		let acumPesoOtro = 0; 
+		let sumaPesos;
+		let promedioPesos; 
+		let nombreGatoMin;
+		let razaGatoMin; 
+		let pesoMin = 50; 
+		let bandera = 0; 
 
 		do {
 			do {
-				tipo = prompt("Indique si es gato/perro/otro"); 
-			}while(tipo!="gato"&&tipo!="perro"&&tipo!="otro");
+				tipo = prompt("Indique el tipo de mascota: perro/gato/otro");
+			}while(tipo!="perro"&&tipo!="gato"&&tipo!="otro");
 
 			do {
-				pelaje = prompt("Indique el tipo de pelaje: corto/largo/sin pelo");
-			}while(pelaje!="corto"&&pelaje!="largo"&&pelaje!="sin pelo");
+				pelaje = prompt("Indique tipo de pelaje: corto/largo/sin pelo");
+			}while(pelaje!="corto" && pelaje!="largo"&&pelaje!="sin pelo");
 
-			switch(tipo){
-				case "perro": 
-					do {
-						edad = parseInt(prompt("Ingrese la edad de la mascota. Si es perro o gato hasta 20 años, para 'otro' hasta 100 años")); 
-					}while(isNaN(edad)==true || edad<0||edad>20);
+			do {
+				edad = parseInt("Ingrese la edad de su mascota(hasta 70 años)");
+			}while(isNaN(edad)==true || edad<0 || edad>70);
 
-				break; 
-				case "gato":
-					do {
-						edad = parseInt(prompt("Ingrese la edad de la mascota. Si es perro o gato hasta 20 años, para 'otro' hasta 100 años")); 
-					}while(isNaN(edad)==true || edad<0||edad>20);
-				break;
-				case "otro": 
-					do {
-						edad = parseInt(prompt("Ingrese la edad de la mascota. Si es perro o gato hasta 20 años, para 'otro' hasta 100 años")); 
-					}while(isNaN(edad)==true || edad<0||edad>100);
-				break;
-			}
-			
-			do{
-				nombre = prompt("Ingrese su nombre"); 
+			do {
+				nombre = prompt("Ingrese el nombre (sin numeros)");
 			}while(isNaN(nombre)==false);
-
-			do{
-				raza = prompt("Ingrese su raza"); 
+			
+			do {
+				raza = prompt("Ingrese la raza (sin numeros)");
 			}while(isNaN(raza)==false);
 
 			do {
-				peso = parseFloat(prompt("Ingrese el peso de su mascota (peso razonable)"));
-			}while(isNaN(peso)==true|| peso <0 || peso >83); 
+				peso = parseFloat(prompt("Ingrese el peso(hasta 60 kilos)"))
+			}while(isNaN(peso)==true || peso<0 || peso>60);
 
 			do {
 				estadoClinico = prompt("Indique el estado clinico: enfermo/internado/adopcion");
-			}while(estadoClinico!="enfermo"&&estadoClinico!="internado"&&estadoClinico!="adopcion"); 
+			}while(estadoClinico!="enfermo"&&estadoClinico!="internado"&&estadoClinico!="adopcion");
+				switch (estadoClinico){
+					case "enfermo":
+						contEnfermos++; //para porcentaje punto b y punto g
+					break;
+					case "internado":
+						contInternados++; //para punto g 
+					break;
+					default:
+						contAdopcion++; 
+				} 
 
 			do {
-				temperatura = parseFloat(prompt("Ingrese la temperatura")); 
-			}while(isNaN(temperatura)==true); 
+				temperatura = parseFloat(prompt("Ingrese una temperatura valida"));
+			}while(isNaN(temperatura)==true || temperatura<32 || temperatura>45);
+			//punto d 
+			if (pelaje=="sin pelo"&&temperatura<temperaturaMiN){
+				temperaturaMiN = temperatura;
+				nombreTempMin = nombre; 
+			}
 
-			
+			switch (tipo){
+				case "perro":
+					if (peso>pesoPerroMax){ //punto a 
+						pesoPerroMax = peso;
+						nombrePerroMax = nombre; 
+					}
+					acumTemPerro = acumTemPerro + temperatura; //para el punto e
+					contPerro++;
+					acumPesoPerro = acumPesoPerro + peso; //para punto h
+				break;
+				case "gato":
+					acumTemGato = acumTemGato + temperatura; //para el punto e
+					contGato++; 
+					acumPesoGato = acumPesoGato + peso; 
+					if (pelaje == "sin pelo"&&peso<pesoMin){ //punto i 
+						nombreGatoMin = nombre;
+						razaGatoMin = raza; 
+					}
+				break;
+				case "otro": 
+					nombreOtro = nombre; //punto c  
+					acumTemOtro = acumTemOtro + temperatura; 
+					contOtro++; 
+					acumPesoOtro = acumPesoOtro + peso; 
+				break; 
+			}
 
+			contTotalMascotas++; //para el porcentaje del punto b
 			seguir = prompt("Desea seguir ingresando? Indique s/n"); 
 		}while(seguir=="s"); 
+		//punto b 
+		porcentaje = contTotalMascotas - (contTotalMascotas * contEnfermos / 100); 
+		//punto e 
+		promedioPerro = acumTemPerro / contTempPerro;
+		promedioGato = acumTemGato / contTempGato; 
+		promedioOtro = acumTemOtro / contTempOtro; 
 
+		if (promedioPerro>promedioGato&&promedioPerro>promedioOtro){
+			mensaje = "el tipo con mayor promedio de temperatura corporal es el perro";
+		}
+		else if (promedioGato>promedioOtro){
+			mensaje = "el tipo con mayor promedio de temperatura corporal es el gato";
+		}
+		else {
+			mensaje = "el tipo con mayor promedio de temperatura corporal es de tipo 'otro'"; 
+		}
+		//punto f
+		sumaPyG = contGato + contPerro; 
+		porcentajePyG = contTotalMascotas - (contTotalMascotas * sumaPyG / 100); 
+		//punto g 
+		if (contEnfermos<contAdopcion&&contEnfermos<contInternados){
+			mensaje2= "el estado con menos animales es 'enfermo'";
+		}
+		else if(contAdopcion<contInternados){
+			mensaje2 = "el estado con menos animales es 'adopcion'";
+		}
+		else {
+			mensaje2 = "el estado con menos animales es 'internados'"; 
+		}
+		//punto h 
+		sumaPesos = acumPesoGato + acumPesoOtro + acumPesoPerro; 
+		promedioPesos = sumaPesos / contTotalMascotas; 
 
+		document.write("el perro mas pesado es "+nombrePerroMax+"<br>"); 
+		document.write("el porcentaje de animales enfermos sobre el total es "+porcentaje+"%"+"<br>"); 
+		document.write("el nombre de la ultima mascota ingresada del tipo 'otro' es "+nombreOtro+"<br>"); 
+		document.write("el animal sin pelo con menor temperatura es "+nombreTempMin+"<br>"); 
+		document.write(mensaje+"<br>"); 
+		document.write("la suma de perros y gatos son "+porcentajePyG+"% sobre el total"+"<br>"); 
+		document.write(mensaje2+"<br>"); 
+		document.write("el promedio de pesos de todas las mascotas ingresadas es "+promedioPesos+"<br>"); 
+		document.write("el gato sin pelos mas livianos se llama "+nombreGatoMin+" y es de raza "+razaGatoMin+"<br>"); 
+		
 }
